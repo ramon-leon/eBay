@@ -18,7 +18,6 @@ public class NormalizeItemInput {
 
         map = Helper.parseString(specific);
 
-
         return map;
     }
 }

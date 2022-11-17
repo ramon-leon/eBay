@@ -19,11 +19,9 @@ import java.util.List;
 @EnableSwagger2
 @EnableCaching
 public class EBayLatestApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(EBayLatestApplication.class, args);
 	}
-
 	@Bean
 	public Docket swaggerConfig() {
 
@@ -46,6 +44,5 @@ public class EBayLatestApplication {
 				.build()
 				.apiInfo(apiInfo);
 	}
-
 
 }
