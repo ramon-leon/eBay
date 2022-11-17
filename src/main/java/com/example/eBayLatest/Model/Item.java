@@ -1,7 +1,12 @@
 package com.example.eBayLatest.Model;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 //● Define an `Item` object with the following fields. Feel free to browse real inventory on
 //        ebay.com to get a better understanding of how real items are structured
@@ -16,6 +21,60 @@ import javax.persistence.Id;
 //        ○ Description
 @Entity
 public class Item {
+
+    @Id
+    private int siteId;
+    private int categoryId;
+    private String title;
+    private ItemEnum.Condition condition;
+    private double price;
+    private int quantity;
+//    @ElementCollection
+//    private List<String> URL = new ArrayList<>();
+    private String ItemSpecifics;
+    private String description;
+    @Transient
+    private Map<String,String> ItemSpecificMap;
+
+    public Map<String, String> getItemSpecificMap() {
+        return ItemSpecificMap;
+    }
+    public void setItemSpecificMap(Map<String, String> itemSpecificMap) {
+        ItemSpecificMap = itemSpecificMap;
+    }
+
+    public ItemEnum.Condition getCondition() {
+        return condition;
+    }
+
+    public void setCondition(ItemEnum.Condition condition) {
+        this.condition = condition;
+    }
+
+//    public List<String> getURL() {
+//        return URL;
+//    }
+//
+//    public void setURL(List<String> URL) {
+//        this.URL = URL;
+//    }
+
+    public String getItemSpecifics() {
+        return ItemSpecifics;
+    }
+
+    public void setItemSpecifics(String itemSpecifics) {
+        ItemSpecifics = itemSpecifics;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public int getSiteId() {
         return siteId;
     }
@@ -55,12 +114,5 @@ public class Item {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
-    @Id
-    private int siteId;
-    private int categoryId;
-    private String title;
-    private double price;
-    private int quantity;
 
 }
