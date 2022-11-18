@@ -4,10 +4,10 @@ Spring Demo App
 
 FEATURES COMPLETED:
 
-1. Implemented interfaces to allow open and closed principle for 'should validate' and 'validation'
+1. Implemented interfaces to showcase open and closed principle for 'should validate' and 'validation'
 2. The 'default' methods can also be extended or alternatively new method can implement the two interfaces above
 3. Cached was implemented using a map data structure and annotated as @component
-4. I assume that following format for item specifics String comma delimited and futher delimited with a colon between the key and value
+4. I assume that following format for item specifics String comma delimited and further delimited with a colon between the key and value
    "Model:Civic,Brand:Honda,Color:Blue"
 5. LOGGING:
    'CALL NORMALIZE' is logged for each call to the 'external api'. 
@@ -15,11 +15,11 @@ FEATURES COMPLETED:
 
 "Future" features:
 
-1. Add mocking and test at the controller level
+1. Add mocking and add more tests at the controller level
 2. Run the ExternalAPI in a thread to overcome latency.
 3. Refactor existing basic caching mechanism to implement LRU caching with max size for scalability
    and to avoid memory issue. Evict least recently used once we reach the max size. Need to back the 
-   cached hashMap with a double linkedlist. Least recently used should be add to the front of the list and most recent one either remove and/or only added to the end of list
+   cached hashMap with a double linkedlist. Least recently used should be added to the front of the list and most recent one either remove and/or only added to the end of list
 
 
 INSTALLATION
