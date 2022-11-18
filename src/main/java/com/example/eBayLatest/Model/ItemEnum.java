@@ -16,8 +16,10 @@ public class ItemEnum {
     }
 
     public enum ErrorCustom {
-        DATABASE(0, "A database error has occurred."),
-        DUPLICATE_USER(1, "This user already exists.");
+        TITLE_LENGTH(100, "Title length should be less than 85."),
+        ITEM_SIZE(101, "item specific items should be between 2 and 4"),
+        MISSING_VALUE(102, "Item specific value missing for Model");
+
 
         private final int code;
         private final String description;

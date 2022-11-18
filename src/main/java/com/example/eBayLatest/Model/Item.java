@@ -1,11 +1,8 @@
 package com.example.eBayLatest.Model;
 
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Transient;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 //● Define an `Item` object with the following fields. Feel free to browse real inventory on
