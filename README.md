@@ -13,6 +13,13 @@ FEATURES COMPLETED:
    'CALL NORMALIZE' is logged for each call to the 'external api'. 
 6. UnitTests to follow. 
 
+"Future" features:
+
+1. Add mocking and test at the controller level
+2. Run the ExternalAPI in a thread to overcome latency.
+3. Refactor existing basic caching mechanism to implement LRU caching with max size for scalability
+   and to avoid memory issue. Evict least recently used once we reach the max size. Need to back the 
+   cached hashMap with a double linkedlist. Least recently used should be add to the front of the list and most recent one either remove and/or only added to the end of list
 
 
 INSTALLATION
