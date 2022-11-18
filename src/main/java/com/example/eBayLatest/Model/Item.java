@@ -26,8 +26,7 @@ public class Item {
     private ItemEnum.Condition condition;
     private double price;
     private int quantity;
-//    @ElementCollection
-//    private List<String> URL = new ArrayList<>();
+    private String URL;
     private String ItemSpecifics;
     private String description;
     @Transient
@@ -47,14 +46,6 @@ public class Item {
     public void setCondition(ItemEnum.Condition condition) {
         this.condition = condition;
     }
-
-//    public List<String> getURL() {
-//        return URL;
-//    }
-//
-//    public void setURL(List<String> URL) {
-//        this.URL = URL;
-//    }
 
     public String getItemSpecifics() {
         return ItemSpecifics;
@@ -112,4 +103,7 @@ public class Item {
         this.quantity = quantity;
     }
 
+    public String getURL() {
+        return URL;
+    }
 }

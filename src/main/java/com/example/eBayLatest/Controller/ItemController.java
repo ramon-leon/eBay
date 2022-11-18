@@ -32,10 +32,7 @@ public class ItemController {
 
         List<ValidationError> list = itemService.validateItem(request);
 
-//        logger.info("Successful ADD");
-
         return new ResponseEntity<>(list, HttpStatus.OK);
-
     }
 
     @GetMapping("/{id}")

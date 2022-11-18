@@ -5,8 +5,12 @@ import java.util.Map;
 
 public class Helper {
     public static Map<String, String> parseString(String str) {
-        String[] sArr = str.split(",");
         Map<String, String> m = new HashMap<>();
+        if (str == null || str.length() == 0) {
+            System.out.println("Unable to parse empty or null string");
+            return m;
+        }
+        String[] sArr = str.split(",");
 
         String[] item;
         String key, value;
