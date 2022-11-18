@@ -2,6 +2,19 @@
 
 Spring Demo App
 
+FEATURES COMPLETED:
+
+1. Implemented interfaces to allow open and closed principle for 'should validate' and 'validation'
+2. The 'default' methods can also be extended or alternatively new method can implement the two interfaces above
+3. Cached was implemented using a map data structure and annotated as @component
+4. I assume that following format for item specifics String comma delimited and futher delimited with a colon between the key and value
+   "Model:Civic,Brand:Honda,Color:Blue"
+5. LOGGING:
+   'CALL NORMALIZE' is logged for each call to the 'external api'. 
+6. UnitTests to follow. 
+
+
+
 INSTALLATION
 
 System Requirements:
@@ -14,7 +27,6 @@ TO RUN locally
 
 1. You only need to start DemoApplication - right click DemoApplication under
    src/main/java/com/example/eBayLatest/EBayLatestApplication.java) and select Run
-
 
 TO RUN as standalone docker container
 
@@ -45,9 +57,5 @@ H2 db access:
 
 http://localhost:8080/h2console    (from locally run only)
 
-KNOWN ISSUES LIMITATIONS
 
-1. ...
-2. ...
-3. 
 

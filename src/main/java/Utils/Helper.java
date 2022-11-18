@@ -13,14 +13,32 @@ public class Helper {
         for (String s : sArr) {
             item = s.split(":");
             key = item[0];
-            //    key = item[0].substring(0,1).toUpperCase() + item[0].substring(1).toLowerCase();
             if (item.length == 2) {
                 value = item[1];
-                //      value = item[1].substring(0, 1).toUpperCase() + item[1].substring(1).toLowerCase();
             } else value = "";
 
-            String[] res = ExternalNormalizeString(key, value);
+            // Basic implementation of caching every 'keyword' seen will be stored in the cache
+
+            String[] res = new String[2];
+            for (int i=0; i < 2; i++) {
+
+                if (item.length == 2) {
+                    key = item[i];
+                } else key = "";
+
+                Map<String, String> cacheMap = Cache.getMap();
+                if (cacheMap.containsKey(key)) {
+                    res[i] = cacheMap.get(key);
+               //     m.put(key, cacheMap.get(key));
+                } else {
+                    String result = ExternalNormalizeString(key);
+                    res[i] = result;
+                    // stored this in the cache
+                    cacheMap.put(key, result);
+                }
+            }
             m.put(res[0], res[1]);
+
         }
         return m;
     }
@@ -28,12 +46,14 @@ public class Helper {
 
     // THIS IS EXTERNAL API to normalize string
 
-    private static String[] ExternalNormalizeString(String item1, String item2) {
-        String[] res = new String[2];
+    private static String ExternalNormalizeString(String item1) {
+        System.out.println("CALL NORMALIZE");
+        String res = "";
         try {
             Thread.sleep(1500);
-            res[0] = item1.substring(0, 1).toUpperCase() + item1.substring(1).toLowerCase();
-            res[1] = item2.substring(0, 1).toUpperCase() + item2.substring(1).toLowerCase();
+            if (item1.length()>0) {
+                res = item1.substring(0, 1).toUpperCase() + item1.substring(1).toLowerCase();
+            }
 
         } catch (InterruptedException e) {
             System.out.println(e);
